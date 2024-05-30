@@ -73,3 +73,144 @@ body {
         transform: translateY(0px);
     }
 }
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    animation: move 15s linear infinite, rotate 15s linear infinite;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #eb1010;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    animation-name: moveCircle, rotateCircle;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(101, 5, 106);
+    top: 30%;
+    left: 60%;
+    animation-name: moveSquare, rotateSquare;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid rgb(65, 115, 9);
+    top: 70%;
+    left: 20%;
+    animation-name: moveTriangle, rotateTriangle;
+}
+
+.move {
+    opacity: 0.1;
+}
+@keyframes moveCircle {
+    0% {
+        top: 10%;
+        left: 10%;
+    }
+    25% {
+        top: 10%;
+        left: calc(100% - 110px);
+    }
+    50% {
+        top: calc(100% - 110px);
+        left: calc(100% - 110px);
+    }
+    75% {
+        top: calc(100% - 110px);
+        left: 10%;
+    }
+    100% {
+        top: 10%;
+        left: 10%;
+    }
+}
+
+@keyframes moveSquare {
+    0% {
+        top: 30%;
+        left: 60%;
+    }
+    25% {
+        top: 70%;
+        left: 60%;
+    }
+    50% {
+        top: 70%;
+        left: 20%;
+    }
+    75% {
+        top: 30%;
+        left: 20%;
+    }
+    100% {
+        top: 30%;
+        left: 60%;
+    }
+}
+
+@keyframes moveTriangle {
+    0% {
+        top: 70%;
+        left: 20%;
+    }
+    25% {
+        top: 20%;
+        left: 70%;
+    }
+    50% {
+        top: 70%;
+        left: calc(100% - 120px);
+    }
+    75% {
+        top: calc(100% - 120px);
+        left: 20%;
+    }
+    100% {
+        top: 70%;
+        left: 20%;
+    }
+}
+
+@keyframes rotateCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateSquare {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotateTriangle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
